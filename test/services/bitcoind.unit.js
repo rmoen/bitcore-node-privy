@@ -1960,7 +1960,7 @@ describe('Bitcoin Service', function() {
       bitcoind.spawn.config.rpcport = 20001;
       bitcoind.spawn.config.rpcuser = 'bitcoin';
       bitcoind.spawn.config.rpcpassword = 'password';
-      bitcoind.spawn.config.mqpubrawtx = 'tcp://127.0.0.1:30001';
+      bitcoind.spawn.config.zmqpubrawtx = 'tcp://127.0.0.1:30001';
 
       bitcoind._loadTipFromNode = sinon.stub().callsArgWith(1, null);
       bitcoind._initZmqSubSocket = sinon.stub();
