@@ -10,7 +10,7 @@ describe('#defaultBaseConfig', function() {
     var home = process.env.HOME;
     var info = defaultBaseConfig();
     info.path.should.equal(cwd);
-    info.config.network.should.equal('livenet');
+    info.config.network.should.equal('mainnet');
     info.config.port.should.equal(3001);
     info.config.services.should.deep.equal(['bitcoind', 'web']);
     var bitcoind = info.config.servicesConfig.bitcoind;

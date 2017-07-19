@@ -10,7 +10,7 @@ describe('#defaultConfig', function() {
 
   it('will return expected configuration', function() {
     var config = JSON.stringify({
-      network: 'livenet',
+      network: 'mainnet',
       port: 3001,
       services: [
         'bitcoind',
@@ -43,7 +43,7 @@ describe('#defaultConfig', function() {
     var home = process.env.HOME;
     var info = defaultConfig();
     info.path.should.equal(home + '/.bitcore');
-    info.config.network.should.equal('livenet');
+    info.config.network.should.equal('mainnet');
     info.config.port.should.equal(3001);
     info.config.services.should.deep.equal(['bitcoind', 'web']);
     var bitcoind = info.config.servicesConfig.bitcoind;
@@ -53,7 +53,7 @@ describe('#defaultConfig', function() {
   });
   it('will include additional services', function() {
     var config = JSON.stringify({
-      network: 'livenet',
+      network: 'mainnet',
       port: 3001,
       services: [
         'bitcoind',
@@ -90,7 +90,7 @@ describe('#defaultConfig', function() {
       additionalServices: ['insight-api', 'insight-ui']
     });
     info.path.should.equal(home + '/.bitcore');
-    info.config.network.should.equal('livenet');
+    info.config.network.should.equal('mainnet');
     info.config.port.should.equal(3001);
     info.config.services.should.deep.equal([
       'bitcoind',

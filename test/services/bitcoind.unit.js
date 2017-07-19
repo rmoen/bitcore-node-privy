@@ -758,10 +758,10 @@ describe('Bitcoin Service', function() {
       bitcore.Networks.disableRegtest();
       baseConfig.node.network = bitcore.Networks.testnet;
     });
-    it('will get default rpc port for livenet', function() {
+    it('will get default rpc port for mainnet', function() {
       var config = {
         node: {
-          network: bitcore.Networks.livenet
+          network: bitcore.Networks.mainnet
         },
         spawn: {
           datadir: 'testdir',
@@ -805,10 +805,10 @@ describe('Bitcoin Service', function() {
       bitcore.Networks.disableRegtest();
       baseConfig.node.network = bitcore.Networks.testnet;
     });
-    it('will get default config path for livenet', function() {
+    it('will get default config path for mainnet', function() {
       var config = {
         node: {
-          network: bitcore.Networks.livenet
+          network: bitcore.Networks.mainnet
         },
         spawn: {
           datadir: 'testdir',
@@ -863,9 +863,9 @@ describe('Bitcoin Service', function() {
       bitcore.Networks.enableRegtest();
       bitcoind._getNetworkOption().should.equal('--regtest');
     });
-    it('return undefined for livenet', function() {
+    it('return undefined for mainnet', function() {
       var bitcoind = new BitcoinService(baseConfig);
-      bitcoind.node.network = bitcore.Networks.livenet;
+      bitcoind.node.network = bitcore.Networks.mainnet;
       bitcore.Networks.enableRegtest();
       should.equal(bitcoind._getNetworkOption(), undefined);
     });

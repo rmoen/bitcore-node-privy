@@ -427,9 +427,9 @@ describe('Bitcore Node', function() {
     afterEach(function() {
       bitcore.Networks.disableRegtest();
     });
-    it('it will return the network name for livenet', function() {
+    it('it will return the network name for mainnet', function() {
       var node = new Node(baseConfig);
-      node.getNetworkName().should.equal('livenet');
+      node.getNetworkName().should.equal('mainnet');
     });
     it('it will return the network name for testnet', function() {
       var baseConfig = {
